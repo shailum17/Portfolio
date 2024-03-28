@@ -1,0 +1,60 @@
+body{
+    margin: 0px;
+}
+
+header {
+    background-color: rgb(125, 187, 203);
+    padding: 15px;
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Align items at the start and end of the header */
+    align-items: center; /* Vertically center items */
+  }
+
+  header h1 {
+    margin: 0;
+    font-size: 30px;
+    margin-left: 10px;
+    
+  }
+  
+  header nav {
+    margin-top: 10px;
+    font-size: large;
+  }
+  
+  header nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin-right: 10px;
+    margin-left : 10px;
+  }
+  
+  header nav ul li a {
+    color: #000000;
+    text-decoration: none;
+  }
+  
+  h1{
+    margin-top: 100px;
+    margin-left: 100px;
+  }
+
+  h2{
+    margin-left: 100px;
+  }
+
+  h3{
+    margin-left: 100px;
+  }
+
+  section ul li {
+    margin-left: 100px;
+  }
+  
+  p{
+    margin-left: 100px;
+  }

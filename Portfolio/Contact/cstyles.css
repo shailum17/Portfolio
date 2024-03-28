@@ -1,0 +1,79 @@
+/* Style for the contact section */
+body {
+  margin: 0px;
+  padding: 0px;
+    background-color: #ffffff;
+    color: rgb(0, 0, 0);
+}
+
+/* Styles for Header */
+header {
+    background-color: rgb(125, 187, 203);
+    padding: 15px;
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Align items at the start and end of the header */
+    align-items: center; /* Vertically center items */       
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 30px;
+    margin-left: 10px;
+  }
+  
+  header nav {
+    margin-top: 10px;
+    font-size: large;
+  }
+  
+  header nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin-right: 10px;
+    margin-left : 10px;
+  }
+  
+  header nav ul li a {
+    color: #000000;
+    text-decoration: none;
+  }
+
+#contact {
+    
+    padding: 0px; /* Add padding around the section */
+    margin-top: 100px; /* Add margin to the top of the section */
+    margin-left: 150px;
+}
+
+/* Style for the heading */
+#contact h2 {
+    color: #000000; /* Change text color */
+}
+
+/* Style for the paragraph */
+#contact p {
+    font-size: 30px; /* Change font size */
+}
+
+/* Style for the links */
+#contact a {
+    text-decoration: none; /* Remove underline */
+    color: #007bff; /* Change link color */
+    margin-right: 20px; /* Add margin between links */
+}
+
+/* Style for the images */
+#contact img {
+    margin-right: 20px; /* Add margin between images */
+}
+
+#logo {
+
+    position: absolute;
+    top: 220px;
+    right: 150px;
+}
