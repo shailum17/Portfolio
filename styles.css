@@ -1,0 +1,73 @@
+body{
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+}
+
+  /* Styles for Header */
+  header {
+    background-color: rgb(125, 187, 203);
+    padding: 15px;
+    display: flex; /* Align items horizontally */
+    justify-content: space-between; /* Align items at the start and end of the header */
+    align-items: center; /* Vertically center items */
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 30px;
+    margin-left: 10px;
+    
+  }
+  
+  header nav {
+    margin-top: 10px;
+    font-size: large;
+  }
+  
+  header nav ul {
+    list-style: none;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin-right: 10px;
+    margin-left : 10px;
+  }
+  
+  header nav ul li a {
+    color: #000000;
+    text-decoration: none;
+  }
+  section {
+    display : hide ;
+  }
+
+/* Adding contact info style   */
+    
+      #contact {
+     display: flex;
+     margin-top: 20px;
+      }
+      #contact h2{
+        margin-left: 10px;
+
+      }
+      
+
+      #contact p{
+        margin-left: 10px;
+        text-size-adjust: 1000px;
+        
+      }
+
+
+
+
+/* Adding footer style */
+
+  footer{
+    text-align: center;
+    align-items: center;
+
+  }
