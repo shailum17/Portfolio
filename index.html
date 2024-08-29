@@ -39,10 +39,17 @@
             To see my Resume and my latest skills. To download my resume <br>please click here &rarr; <a href="Resume.pdf" download="Resume.pdf"> Resume</a>
         </p>
     </div>
-        <img src="profile.jpg" alt="My image" >
+        <div class="image">
+            <img src="profile.jpg" alt="My image" >
+        </div>
     </section>
-
+<hr>
     <section id="skills">
+        <div class="image">
+            <img src="skills.gif" alt="">
+        </div>
+        
+
         <h2>Skills</h2>
         <h3>Soft Skills:</h3>
         <ul>
@@ -123,7 +130,7 @@
 
     <section id="contact">
         <h2>Contact Me</h2>
-        <div class="text-container">
+        <div class="text-container1">
             <p>
                 Feel free to contact me via email at <a href="mailto:shailendramourya17@gmail.com">shailendramourya17@gmail.com</a> or connect with me on socail media: 
             </p>
@@ -145,16 +152,19 @@
                 </li>
             </ul>
         </div>
-        <div>
+        <div class="text-container1">
             <p>Or Please leave a comment below</p>
-            <form action="style.js">
-                <div>
+            <form action="style.js" class="comment-form">
+                <div class="comment-form" >
                     <label for="email">Email:</label>
                     <input type="email" name="otherusersEmail" placeholder="Enter your email">
                 </div>
-                <div>
+                <div class="comment-form" >
                     <label for="text">Comment:</label>
                     <input type="text" placeholder="Enter your comment  here">
+                </div>
+                <div>
+                    <button>submit</button>
                 </div>
             </form>
         </div>
