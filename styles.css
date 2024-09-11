@@ -1,6 +1,6 @@
-section {
+/* section {
   display:block;
-}
+} */
 
 
 body{
@@ -17,7 +17,9 @@ body{
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Align items at the start and end of the header */
     align-items: center; /* Vertically center items */
-    /* overflow:hidden; */
+    overflow:hidden;
+    position: sticky;
+    top: 0%;
   }
   
 
@@ -53,7 +55,7 @@ body{
 
   /*  Style code of About section */
 
-  #about{
+  #home{
     display: flex;
     align-items: center;
 
@@ -80,15 +82,16 @@ body{
   .image img{
     border-radius: 50%;
     width: 400px;
-    margin-top: 40px;
+    /* margin-top: 40px; */
     margin-left: 300px;
-    margin-right: 90px;
+    /* margin-right: 90px; */
+    display: flex;
   }
 /* Adding Skills style */
 
 .area
 {
-  justify-content: baseline;
+  justify-content: space-between;
   position: relative;
   padding-bottom:760px;
 }
@@ -150,6 +153,9 @@ body{
   float: right;
 }
 
+
+
+
 .skillsimage img{
   margin-left: 90px;
   margin-right: 100px;
@@ -162,17 +168,21 @@ body{
 
 /* Adding Projects style */
 
+#projects h1{
+  text-align: center;
+}
+
 #projects h2{
   text-align: center;
 }
 
 .ISE{
   width: 400px;
-  height: 300px;
-  color: #000000;
   height: auto;
+  color: #000000;
   margin-left: 90px;
   margin-right: 50px;
+  margin-top: 40px;
   display: flex;
   flex-direction: column;
   margin-right:50px;
@@ -187,39 +197,42 @@ body{
 }
 
 .Project_image_1 img{
-  width: 680px;
+  width: 700px;
   height: auto;
   display: flex;
   margin: right 10px;
   margin-bottom: 50px;
-}
-
-.google_landing_page_img img{
-  width: 680px;
-  height: auto;
-  display: flex;
-  margin-left: 50px;
-  margin-bottom: 50px;
+  margin-top: 50px;
 }
 
 .GLP{
-  width: 450px;
-  height: 400px;
-  color: #000000;
+  width: 460px;
   height: auto;
-  margin-left: 10px;
+  color: #000000;
+  margin-left: 50px;
+  margin-right: 10px;
+  margin-top: 50px;
   display: flex;
   flex-direction: column;
-  margin-right:100px;
+  margin-right:50px;
   border: 3px solid rgb(125, 187, 203);
   border-radius: 10px;
   padding: 30px;
   border-color: #000000;
   box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
   background-color: #ffffff;
-  float:right;
+  float:left;
 }
 
+.google_landing_page_img img{
+  width: 715px;
+  height: auto;
+  display: flex;
+  margin-right: 10px;
+  margin-bottom: 70px;
+  margin-top: 70px;
+  margin-left: 95px;
+}
 /* Adding Contact Me style */
 
 #contact h2{
@@ -229,44 +242,108 @@ body{
   
 }
 
-.text-container1{
-    
-  height: auto;
-  width: 35%; /* Adjust width to fit two containers side by side */
-  margin: 50px 2.5%; /* Center the containers within the parent */
+.text-container1 { 
+   
+  margin: 50px auto; /* Centering the container horizontally */
   display: flex;
-  align-items: flex-start;
+  /* align-items:start; */
+  
   justify-content: space-between;
   flex-direction: column;
   border: 3px solid #000000;
   border-radius: 10px;
   padding: 65px;
-  box-shadow: 2px 2px 50px  rgb(221, 167, 167) ;
-  background-color: #ffffff;
+  box-shadow: 2px 2px 50px rgb(221, 167, 167);
+  background-color: #ffffff; 
   color: #000000;
-  /*  */
-  float:left;
-  
-/*  */
+  /* align-items: end; */
+  /* Removed float: left; and position: fixed; */
 }
 
-form.comment-form{
-  display: table;
+form.comment-form {
+  display: flex; /* Use flexbox instead of table */
+  flex-direction: column; /* Align items in a column */
+  border: 3px #000000;
+  /* align-items: end; */
 }
 
-div.form{
-  display: table-row;
-}
-
-label,input{
-  display: table-cell;
+div.form {
+  display: flex; /*Flexbox layout for rows*/
+  flex-direction: column;
   margin-bottom: 10px;
+  border: 3px black;
+  
 }
 
-label{
+.information {
+  display: flex;
+  justify-content: space-around; /* Align content to the right */
+  text-align: right; /* Align text to the right */
+}
+
+.information ul {
+  list-style-type: none; /* Remove bullet points */
+  padding: 0; /* Remove padding */
+  margin: 0; /* Remove margin */
+  display: flex; /* Display items inline */
+  gap: 10px; /* Add space between icons */
+  
+}
+
+.information ul li {
+  display: inline-block; /* Ensure each icon is treated as an inline block */
+
+}
+
+.information ul li a img, 
+.information ul li a svg {
+  width: 30px; /* Adjust the size of the icons (set as needed) */
+  height: auto;
+  vertical-align: middle; /* Align icons vertically in the middle */
+  display: inline-block; /* Ensure each icon is treated as an inline block */
+  /* justify-content: space-between; */
+  
+}
+
+
+label, input {
+  margin-right: 10px; /* Add spacing between label and input */
+  flex: 1; /* Allow flexbox to control width */
+}
+
+label {
   padding-right: 10px;
 }
 
+#textarea1{
+  width: 30%;
+  height: 100px;
+}
+
+
+/* Certificate */
+
+.certifications h1{
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+.certificate h2{
+  text-align: center;
+}
+
+.certificate {
+  display: inline-flex;
+  flex-direction: column;
+  border: 3px solid #000000; /* Added 'solid' */
+  border-radius: 10px;
+  width: 460px;
+  height: auto;
+  justify-content: space-between; /* This will space items vertically */
+  margin-bottom: 10px;
+  align-items: center;
+  box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
+}
 
 
 /* Adding footer style */
@@ -274,11 +351,12 @@ label{
   footer{
     text-align: center;
     align-items: center;
-    background-color: white;
+    background-color: rgb(255, 255, 255);
     color: #000000;
     width: 100%;
     overflow: hidden;
     position: sticky;
+    /* bottom: 0; */
   }
 
 
