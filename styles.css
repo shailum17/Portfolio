@@ -12,7 +12,7 @@ body{
 
   /* Styles for Header */
   header {
-    background-color: rgb(125, 187, 203);
+    background-color: rgb(248, 138, 138);
     padding: 15px;
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Align items at the start and end of the header */
@@ -50,6 +50,15 @@ body{
     color: #000000;
     text-decoration: none;
   }
+
+  header nav ul li a:hover {
+    color: #000000;
+    text-decoration:solid;
+    background: #ebb7b7;
+    border-radius: 3px;
+    padding: 10px;
+    transition: background 0.5s ease-in-out;
+  }
   
 
 
@@ -61,13 +70,14 @@ body{
 
   }
   .text-container {
+    width: 600px;
     color: #000000;
     height: auto;
     margin-left: 150px;
     display: flex;
     flex-direction: column;
     margin-right:20px;
-    /* border: 3px solid rgb(125, 187, 203); */
+    /* border: 1px solid rgb(125, 187, 203); */
     border-radius: 10px;
     padding: 30px;
     /* border-color: #ffffff; */
@@ -77,103 +87,130 @@ body{
     
   }
 
+  .text-container h3{
+    margin-bottom: 0%;
+  }
+
+  .text-container h2 {
+    text-align: left;
+    font-size: 30px;
+    /* font-family: 'Arial', sans-serif; */
+    color: #e7abab;
+    overflow: hidden;
+    border-right: .15em solid #fff;
+    white-space: nowrap;
+    margin: 0px;
+    animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
+  }
+  
+  @keyframes typing {
+    from { width: 0; }
+    to { width: 100%; }
+  }
+  
+  @keyframes blink-caret {
+    from, to { border-color: transparent; }
+    50% { border-color: white; }
+  }
  
 
   .image img{
     border-radius: 50%;
     width: 400px;
     /* margin-top: 40px; */
-    margin-left: 300px;
+    margin-left: 100px;
     /* margin-right: 90px; */
     display: flex;
   }
 /* Adding Skills style */
 
-.area
-{
-  justify-content: space-between;
+.area {
+  display: flex;
+  flex-wrap: wrap; /* Allows items to wrap onto the next line if needed */
+  justify-content: space-between; /* Spaces elements evenly */
+  padding-bottom: 60px; /* Adjusted padding to a reasonable value */
   position: relative;
-  padding-bottom:760px;
 }
 
-#skills h2{
+#skills h2 {
   text-align: center;
 }
 
-.softskills{
-  width: fit-content;
-  color: #000000;
+.softskills, .Technicalskills, .hardskills {
+  width: 350px; /* Makes sure all skill sections have equal width */
   height: auto;
-  /*  */
-  display: flex;
+  color: #000000;
+  display: inline-flex;
   flex-direction: column;
-  margin-right:150px;
-  margin-left: 50px;
-  border: 3px solid rgb(125, 187, 203);
+  margin: 20px; /* Adds space between the elements */
+  border: 1px solid rgb(0, 0, 0);
   border-radius: 10px;
   padding: 30px;
-  border-color: #000000;
-  box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
+  box-shadow: 2px 2px 50px rgb(240, 188, 188);
   background-color: #ffffff;
-  float:right;
 }
 
-.Technicalskills{
-  width: fit-content;
-  color: #000000;
-  height: auto;
-  margin-left: 100px;
-  display: flex;
-  flex-direction: column;
-  margin-right:20px;
-  border: 3px solid rgb(125, 187, 203);
-  border-radius: 10px;
-  padding: 30px;
-  border-color: #000000;
-  box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
-  background-color: #ffffff;
-  float: left;
+.skillsimage {
+  width: 650px; /* Makes sure the images take full container width */
+  text-align: center;
+  margin: 20px 0; /* Adds spacing around images */
+  display: inline-flex;
 }
 
-.hardskills{
-  width: 300px;
-  height: 300px;
-  color: #000000;
-  height: auto;
-  /* margin-left: 150px; */
-  display: flex;
-  flex-direction: column;
-  margin-right:100px;
-  border: 3px solid rgb(125, 187, 203);
-  border-radius: 10px;
-  padding: 30px;
-  border-color: #000000;
-  box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
-  background-color: #ffffff;
-  float: right;
-}
-
-
-
-
-.skillsimage img{
-  margin-left: 90px;
-  margin-right: 100px;
-  margin-bottom: 10px;
+.skillsimage img {
   width: 500px;
   height: auto;
+  margin: 0 auto; /* Centers the image horizontally */
+  border-radius: 10px;
+  display: inline-flex;
+  justify-content: center;
+}
+
+/* Style for Internships and Exoerience */
+
+.Internships{
+  margin-left: 20px;
+}
+
+.Internships h1{
+  text-align: center;
+}
+
+.internship{
+  justify-content: space-between;
   display: flex;
-  float: inline-start;
-  }
+  /* align-items: center; */
+  margin-left: 80px;
+  margin-bottom: 50px;
+  margin-top: 50px;
+}
+
+
+.Internships div{
+  padding: 30px;
+  border: 1px solid #000;
+  border-radius: 10px;
+  width: 500px ;
+  height: auto;
+  flex-direction: column;
+  margin-bottom: 100px;
+  margin-right: 50px;
+  display: inline-flex;
+  box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
+}
+
+
 
 /* Adding Projects style */
 
 #projects h1{
   text-align: center;
+  margin-top: 10px;
 }
 
 #projects h2{
   text-align: center;
+  
 }
 
 .ISE{
@@ -186,7 +223,7 @@ body{
   display: flex;
   flex-direction: column;
   margin-right:50px;
-  border: 3px solid rgb(125, 187, 203);
+  border: 1px solid rgb(125, 187, 203);
   border-radius: 10px;
   padding: 30px;
   border-color: #000000;
@@ -215,7 +252,7 @@ body{
   display: flex;
   flex-direction: column;
   margin-right:50px;
-  border: 3px solid rgb(125, 187, 203);
+  border: 1px solid rgb(125, 187, 203);
   border-radius: 10px;
   padding: 30px;
   border-color: #000000;
@@ -233,6 +270,8 @@ body{
   margin-top: 70px;
   margin-left: 95px;
 }
+
+
 /* Adding Contact Me style */
 
 #contact h2{
@@ -250,7 +289,7 @@ body{
   
   justify-content: space-between;
   flex-direction: column;
-  border: 3px solid #000000;
+  border: 1px solid #000000;
   border-radius: 10px;
   padding: 65px;
   box-shadow: 2px 2px 50px rgb(221, 167, 167);
@@ -263,7 +302,7 @@ body{
 form.comment-form {
   display: flex; /* Use flexbox instead of table */
   flex-direction: column; /* Align items in a column */
-  border: 3px #000000;
+  border: 1px #000000;
   /* align-items: end; */
 }
 
@@ -271,14 +310,14 @@ div.form {
   display: flex; /*Flexbox layout for rows*/
   flex-direction: column;
   margin-bottom: 10px;
-  border: 3px black;
+  border: 1px black;
   
 }
 
 .information {
-  display: flex;
-  justify-content: space-around; /* Align content to the right */
-  text-align: right; /* Align text to the right */
+  
+  /* justify-content: space-around; Align content to the right */
+  align-items: flex-start;
 }
 
 .information ul {
@@ -297,11 +336,9 @@ div.form {
 
 .information ul li a img, 
 .information ul li a svg {
-  width: 30px; /* Adjust the size of the icons (set as needed) */
-  height: auto;
-  vertical-align: middle; /* Align icons vertically in the middle */
-  display: inline-block; /* Ensure each icon is treated as an inline block */
-  /* justify-content: space-between; */
+  margin-left: 30px;
+  display: flex;
+  justify-content: center;
   
 }
 
@@ -335,7 +372,7 @@ label {
 .certificate {
   display: inline-flex;
   flex-direction: column;
-  border: 3px solid #000000; /* Added 'solid' */
+  border: 1px solid #000000; /* Added 'solid' */
   border-radius: 10px;
   width: 460px;
   height: auto;
@@ -344,6 +381,25 @@ label {
   align-items: center;
   box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
 }
+
+
+#see-more-btn {
+  display: block;
+  margin: 20px auto;
+  padding: 10px 20px;
+  background-color: #f0b6b6;
+  border: none;
+  border-radius: 5px;
+  color: #000;
+  font-size: 16px;
+  cursor: pointer;
+}
+
+#see-more-btn:hover {
+  background-color: #f08888;
+}
+
+
 
 
 /* Adding footer style */
