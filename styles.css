@@ -380,6 +380,13 @@ label {
   height: 100px;
 }
 
+.social-media ul li {
+  display: inline-flex;
+  justify-content: space-around;
+  align-items: center;
+  margin-top: 20px;
+  margin-right: ;px
+}
 
 /* Certificate */
 
