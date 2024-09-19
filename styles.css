@@ -4,10 +4,10 @@
 
 
 body{
-    color: rgb(0, 0, 0);
-    background-color: rgb(255, 255, 255);
+    color: var(--primary-color);
+    background-color: var(--secondary-color);
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
-    
+    margin: 0%;
 }
 
   /* Styles for Header */
@@ -17,7 +17,7 @@ body{
     display: flex; /* Align items horizontally */
     justify-content: space-between; /* Align items at the start and end of the header */
     align-items: center; /* Vertically center items */
-    overflow:hidden;
+    /* overflow:hidden; */
     position: sticky;
     top: 0%;
   }
@@ -31,12 +31,13 @@ body{
   }
   
   header nav {
-    margin-top: 10px;
+    margin-top: 0px;
     font-size: large;
   }
   
   header nav ul {
     list-style: none;
+    flex: 1;
     padding: 0;
   }
   
@@ -47,12 +48,12 @@ body{
   }
   
   header nav ul li a {
-    color: #000000;
+    color: var(--primary-color);
     text-decoration: none;
   }
 
   header nav ul li a:hover {
-    color: #000000;
+    color: var(--primary-color);
     text-decoration:solid;
     background: #ebb7b7;
     border-radius: 3px;
@@ -60,6 +61,28 @@ body{
     transition: background 0.5s ease-in-out;
   }
   
+  :root{
+    --primary-color: #212121;
+    --secondary-color:#edf2fc;
+  }
+  .dark-theme{
+    --primary-color:  #edf2fc;
+    --secondary-color:#212121;
+  }
+
+#icon{
+  cursor: pointer;
+  width: 20px;
+  margin-left: 10px;
+  margin-right: 10px;
+}
+
+nav ul{
+  flex: 1;
+  text-align: right;
+}
+
+
 
 
   /*  Style code of About section */
@@ -71,8 +94,8 @@ body{
   }
   .text-container {
     width: 600px;
-    color: #000000;
-    height: auto;
+    color: var(--primary-color);
+    height: 220px;
     margin-left: 150px;
     display: flex;
     flex-direction: column;
@@ -82,7 +105,7 @@ body{
     padding: 30px;
     /* border-color: #ffffff; */
     box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
-    background-color: #ffffff;
+    background-color: var(--secondary-color);
     font-size: large;
     
   }
@@ -97,7 +120,7 @@ body{
     /* font-family: 'Arial', sans-serif; */
     color: #e7abab;
     overflow: hidden;
-    border-right: .15em solid #fff;
+    border-right: .15em solid var(--secondary-color);
     white-space: nowrap;
     margin: 0px;
     animation: typing 3.5s steps(40, end), blink-caret .75s step-end infinite;
@@ -110,7 +133,7 @@ body{
   
   @keyframes blink-caret {
     from, to { border-color: transparent; }
-    50% { border-color: white; }
+    50% { border-color: var(--secondary-color); }
   }
  
 
@@ -139,15 +162,15 @@ body{
 .softskills, .Technicalskills, .hardskills {
   width: 350px; /* Makes sure all skill sections have equal width */
   height: auto;
-  color: #000000;
+  color: var(--primary-color);
   display: inline-flex;
   flex-direction: column;
   margin: 20px; /* Adds space between the elements */
-  border: 1px solid rgb(0, 0, 0);
+  border: 1px solid var(--primary-color);
   border-radius: 10px;
   padding: 30px;
-  box-shadow: 2px 2px 50px rgb(240, 188, 188);
-  background-color: #ffffff;
+  box-shadow: 2px 2px 50px rgb(240, 188, 188), 2px 2px 50px var(--secondary-color);
+  background-color: var(--secondary-color);
 }
 
 .skillsimage {
@@ -188,7 +211,7 @@ body{
 
 .Internships div{
   padding: 30px;
-  border: 1px solid #000;
+  border: 1px solid var(--primary-color);
   border-radius: 10px;
   width: 500px ;
   height: auto;
@@ -216,7 +239,7 @@ body{
 .ISE{
   width: 400px;
   height: auto;
-  color: #000000;
+  color: var(--primary-color);
   margin-left: 90px;
   margin-right: 50px;
   margin-top: 40px;
@@ -226,9 +249,9 @@ body{
   border: 1px solid rgb(125, 187, 203);
   border-radius: 10px;
   padding: 30px;
-  border-color: #000000;
+  border-color: var(--primary-color);
   box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
-  background-color: #ffffff;
+  background-color: var(--secondary-color);
   float:left;
   
 }
@@ -245,7 +268,7 @@ body{
 .GLP{
   width: 460px;
   height: auto;
-  color: #000000;
+  color: var(--primary-color);
   margin-left: 50px;
   margin-right: 10px;
   margin-top: 50px;
@@ -255,9 +278,9 @@ body{
   border: 1px solid rgb(125, 187, 203);
   border-radius: 10px;
   padding: 30px;
-  border-color: #000000;
+  border-color: var(--primary-color);
   box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
-  background-color: #ffffff;
+  background-color: var(--secondary-color);
   float:left;
 }
 
@@ -289,12 +312,12 @@ body{
   
   justify-content: space-between;
   flex-direction: column;
-  border: 1px solid #000000;
-  border-radius: 10px;
+  /* border: 1px solid var(--primary-color); */
+  /* border-radius: 10px; */
   padding: 65px;
-  box-shadow: 2px 2px 50px rgb(221, 167, 167);
-  background-color: #ffffff; 
-  color: #000000;
+  /* box-shadow: 2px 2px 50px rgb(221, 167, 167); */
+  background-color: var(--secondary-color); 
+  color: var(--primary-color);
   /* align-items: end; */
   /* Removed float: left; and position: fixed; */
 }
@@ -302,7 +325,7 @@ body{
 form.comment-form {
   display: flex; /* Use flexbox instead of table */
   flex-direction: column; /* Align items in a column */
-  border: 1px #000000;
+  border: 1px var(--primary-color);
   /* align-items: end; */
 }
 
@@ -310,7 +333,7 @@ div.form {
   display: flex; /*Flexbox layout for rows*/
   flex-direction: column;
   margin-bottom: 10px;
-  border: 1px black;
+  border: 1px var(--primary-color);
   
 }
 
@@ -372,12 +395,13 @@ label {
 .certificate {
   display: inline-flex;
   flex-direction: column;
-  border: 1px solid #000000; /* Added 'solid' */
+  border: 1px solid var(--primary-color); /* Added 'solid' */
   border-radius: 10px;
   width: 460px;
   height: auto;
   justify-content: space-between; /* This will space items vertically */
   margin-bottom: 10px;
+  margin-left: 8px;
   align-items: center;
   box-shadow: 2px 2px 50px  rgb(240, 188, 188) ;
 }
@@ -407,14 +431,10 @@ label {
   footer{
     text-align: center;
     align-items: center;
-    background-color: rgb(255, 255, 255);
-    color: #000000;
+    background-color: var(--secondary-color);
+    color: var(--primary-color);
     width: 100%;
     overflow: hidden;
     position: sticky;
     /* bottom: 0; */
   }
-
-
-
-
