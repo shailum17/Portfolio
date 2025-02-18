@@ -1,0 +1,48 @@
+/* Certificate */
+.certifications h1 {
+    text-align: center;
+    margin-bottom: 30px;
+  }
+  
+  .certificate h2 {
+    text-align: center;
+  }
+  
+  .certificate {
+    display: inline-flex;
+    flex-direction: column;
+    border: 1px solid #212121;
+    border-radius: 10px;
+    width: 460px;
+    height: auto;
+    justify-content: space-between;
+    margin-bottom: 10px;
+    margin-left: 8px;
+    align-items: center;
+    box-shadow: 2px 2px 10px rgba(183, 183, 183, 0.5);
+    background: linear-gradient(135deg, #edf2fc, #dde7f5);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+  }
+  
+  .certificate:hover {
+    transform: translateY(-10px);
+    box-shadow: 4px 4px 20px rgba(183, 183, 183, 0.7);
+  }
+  
+  #see-more-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background: linear-gradient(135deg, #f0b6b6, #f88a8a);
+    border: none;
+    border-radius: 5px;
+    color: #000;
+    font-size: 16px;
+    cursor: pointer;
+    transition: background 0.3s ease;
+    margin-bottom: 135px;
+  }
+  
+  #see-more-btn:hover {
+    background: linear-gradient(135deg, #f08888, #ff6f61);
+  }
