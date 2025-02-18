@@ -51,12 +51,15 @@ document.addEventListener('DOMContentLoaded', function () {
     typeWriter();
   });
   
-document.addEventListener('DOMContentLoaded', function() {
-  var icon = document.getElementById('icon');
-  icon.onclick = function() {
-    document.body.classList.toggle('dark-theme');
-    if(document.body.classList.contains('dark-theme'))
-      icon.src = "sun.png";
-    else icon.src = "moon.png"
-  };
-})
+
+fetch('header.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('header').innerHTML = data;
+            });
+
+fetch('footer.html')
+            .then(response => response.text())
+            .then(data => {
+                document.getElementById('footer').innerHTML = data;
+            });

@@ -1,0 +1,245 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600&display=swap');
+
+:root {
+    --accent-color: #355cc9;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    margin: 0;
+    font-family: 'Montserrat', sans-serif;
+}
+h1{
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.wrapper {
+    display: flex;
+    flex-flow: row wrap;
+    justify-content: center;
+}
+
+.card {
+    width: 630px;
+    height: 340px;
+    margin: 1em;
+    margin-bottom: 130px;
+    perspective: 1500px;
+}
+
+.card .content {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transform-style: preserve-3d;
+    transition: transform 0.8s cubic-bezier(0.75, 0, 0.85, 1);
+}
+
+.more {
+    display: none;
+}
+
+.more:checked ~ .content {
+    transform: rotateY(180deg);
+}
+
+.front,
+.back {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    backface-visibility: hidden;
+    transform-style: preserve-3d;
+    border-radius: 6px;
+}
+
+.front {
+    background-color: #fff;
+    background-size: cover;
+    background-position: center center;
+}
+
+.front:after {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    display: block;
+    border-radius: 6px;
+    backface-visibility: hidden;
+    background: linear-gradient(40deg, rgba(67, 138, 243, 0.7), rgba(255, 242, 166, 0.7));
+}
+
+.front .inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5em;
+    transform: translateZ(80px) scale(0.94);
+}
+
+.front h2 {
+    margin-bottom: 0.3em;
+    text-transform: uppercase;
+    letter-spacing: 3px;
+    font-weight: 500;
+    text-shadow: 0 0 6px rgba(0, 0, 0, 0.1);
+}
+
+
+
+.back {
+    transform: rotateY(180deg);
+    background-color: #fff;
+    border: 2px solid rgb(240, 240, 240);
+}
+
+.back .inner {
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 1.5em;
+    transform: translateZ(80px) scale(0.94);
+}
+
+.info {
+    display: flex;
+    align-items: center;
+    color: var(--accent-color);
+}
+
+.info:not(:first-of-type)::before {
+    content: '';
+    position: absolute;
+    left: -0.9em;
+    height: 18px;
+    width: 1px;
+    background-color: #ccc;
+}
+
+.info span {
+    font-size: 2em;
+    font-weight: 700;
+}
+
+.info .icon {
+    margin-left: 0.3em;
+}
+
+.info .icon span {
+    display: block;
+    margin-top: -0.25em;
+    font-size: 0.8em;
+    font-weight: 600;
+    white-space: nowrap;
+}
+
+.description {
+    display: flex;
+    flex-direction: column;
+    font-size: 0.86em;
+    border-radius: 5px;
+    font-weight: 600;
+    line-height: 1.4em;
+    overflow: auto;
+    color: var(--accent-color);
+    padding-right: 10px;
+}
+
+
+.github-link {
+    font-weight: 600;
+    color: var(--accent-color);
+    font-size: 0.86em;
+}
+
+
+
+.github-link {
+    justify-self: center;
+}
+
+.button {
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    font-weight: 600;
+    cursor: pointer;
+    display: block;
+    padding: 0 1.5em;
+    height: 3em;
+    line-height: 2.9em;
+    background-color: transparent;
+    border: solid 2px #fff;
+    color: #fff;
+    border-radius: 4px;
+    text-align: center;
+    transition: 0.3s ease-in-out;
+}
+
+.button:hover {
+    background-color: #fff;
+    color: var(--accent-color);
+}
+
+.button.return {
+    color: var(--accent-color);
+    border-color: var(--accent-color);
+}
+
+.button.return:hover {
+    background-color: var(--accent-color);
+    color: #fff;
+}
+
+.github-button-container {
+  text-align: center; /* Center the button container */
+  margin-top: 20px; /* Add some space above the button */
+}
+
+.github-button {
+  background-color: #1b6dc2; /* GitHub blue */
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  border-radius: 5px;
+  text-decoration: none;
+  font-weight: 600;
+  transition: background-color 0.3s;
+  display: inline-block; /* Ensure the button is inline */
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.github-button:hover {
+  background-color: #7bbdfb; /* Darker GitHub blue on hover */
+}
+
+.github-button:hover {
+    /* background-color: darken(var(--accent-color), 10%); */
+}
+
+::-webkit-scrollbar {
+    width: 5px;
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: lighten(var(--accent-color), 20%);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--accent-color);
+}

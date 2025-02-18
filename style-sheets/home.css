@@ -1,0 +1,106 @@
+/* Style code of About section */
+#home {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 50px;
+    height: 500px;
+    margin-bottom: 100px;
+}
+
+.text-container {
+    max-width: 800px;
+    color: #212121;
+    display: flex;
+    flex-direction: column;
+    border-radius: 10px;
+    padding: 30px;
+    font-size: large;
+    position: relative;
+    margin-left: 100px;
+    margin-top: 50px;
+    flex-grow: 1;
+    word-wrap: break-word; /* Ensures text will wrap within the container */
+    overflow-wrap: break-word; /* Ensures words break appropriately */
+    white-space: normal; /* Allow text to wrap normally */
+}
+
+.text-container h3 {
+    margin-bottom: 0;
+}
+
+.text-container h2 {
+    text-align: left;
+    font-size: 30px;
+    color: #e7abab;
+    margin: 0;
+}
+
+.image {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+    flex-shrink: 0;
+    position: relative;
+}
+
+.image img {
+    margin-top: 50px;
+    border-radius: 50%;
+    width: 400px;
+    margin-right: 50px;
+    width: 550px;
+    
+}
+
+.intro {
+    margin-top: 200px;
+    padding: 50px 20px;
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: left;
+}
+
+.intro h1 {
+    font-size: 2em;
+    margin-bottom: 20px;
+}
+
+.intro p {
+    line-height: 1.6;
+    margin-bottom: 15px;
+}
+
+.intro strong {
+    color: #ff70a6;
+}
+
+.find-me {
+    margin-top: 30px;
+}
+
+.find-me h2 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+}
+
+.find-me p {
+    margin-bottom: 20px;
+}
+
+.social-icons {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.icon {
+    font-size: 2em;
+    color: #b0b0c4;
+    transition: color 0.3s;
+}
+
+.icon:hover {
+    color: #ff70a6;
+}

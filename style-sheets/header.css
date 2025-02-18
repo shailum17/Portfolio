@@ -1,0 +1,54 @@
+/* Styles for Header */
+header {
+    z-index: 1;
+    background: linear-gradient(135deg, #f88a8a, #ff6f61);
+    padding: 15px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: sticky;
+    top: 0;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  }
+  
+  header h1 {
+    margin: 0;
+    font-size: 30px;
+    margin-left: 10px;
+    color: #fff;
+  }
+  
+  header nav {
+    margin-top: 0;
+    font-size: large;
+  }
+  
+  header nav ul {
+    list-style: none;
+    flex: 1;
+    padding: 0;
+  }
+  
+  header nav ul li {
+    display: inline;
+    margin-right: 10px;
+    margin-left: 10px;
+  }
+  
+  header nav ul li a {
+    color: #fff;
+    text-decoration: none;
+    padding: 10px;
+    transition: background 0.3s ease, color 0.3s ease;
+  }
+  
+  header nav ul li a:hover {
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 3px;
+    color: #fff;
+  }
+  
+  nav ul {
+    flex: 1;
+    text-align: right;
+  }
