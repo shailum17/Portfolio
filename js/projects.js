@@ -5,7 +5,7 @@ const projects = [
         title: "imageOmania",
         subtitle: "Creative Design Gallery and Search Engine",
         date: "Feb 15 - Jul 10, 2025",
-        image: "assets/projects/imageomania.png",
+        image: "assets/projects/imageOmania.png",
         description: "A Pinterest-style responsive web gallery to showcase and contribute creative designs. Includes search functionality, animated UI, dynamic header/footer, and contact form with optional image upload.",
         technologies: ["HTML5", "CSS3", "JavaScript", "Bootstrap"],
         features: [
