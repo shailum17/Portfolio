@@ -188,10 +188,24 @@ section {
     font-size: 1.2rem;
     margin-left: 30px;
     color: var(--dark);
+    position: relative;
+    z-index: 1001;
+    background: var(--primary);
+    color: #fff;
+    border-radius: 50%;
+    padding: 10px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: background 0.3s, color 0.3s;
 }
-
+.theme-toggle:hover, .theme-toggle:focus {
+  background: var(--secondary);
+  color: #fff;
+}
 .dark-theme .theme-toggle {
-    color: var(--light);
+  background: var(--secondary);
+  color: #fff;
 }
 
 .mobile-menu {
@@ -1335,3 +1349,29 @@ textarea.form-control {
     outline-offset: 2px;
     box-shadow: 0 0 0 2px var(--secondary);
 }
+
+.pre-animate {
+  opacity: 0;
+  transform: translateY(40px);
+  transition: opacity 0.7s cubic-bezier(0.4,0,0.2,1), transform 0.7s cubic-bezier(0.4,0,0.2,1);
+}
+.animate-in {
+  opacity: 1 !important;
+  transform: none !important;
+}
+
+/* Custom section animations */
+.fade-in-hero.pre-animate { opacity: 0; }
+.fade-in-hero.animate-in { opacity: 1; transition: opacity 0.8s; }
+
+.slide-up-about.pre-animate { opacity: 0; transform: translateY(60px); }
+.slide-up-about.animate-in { opacity: 1; transform: none; transition: opacity 0.8s, transform 0.8s; }
+
+.zoom-in-skills.pre-animate { opacity: 0; transform: scale(0.8); }
+.zoom-in-skills.animate-in { opacity: 1; transform: scale(1); transition: opacity 0.8s, transform 0.8s; }
+
+.flip-in-portfolio.pre-animate { opacity: 0; transform: rotateY(90deg) scale(0.95); }
+.flip-in-portfolio.animate-in { opacity: 1; transform: none; transition: opacity 0.8s, transform 0.8s; }
+
+.fade-in-contact.pre-animate { opacity: 0; }
+.fade-in-contact.animate-in { opacity: 1; transition: opacity 0.8s; }

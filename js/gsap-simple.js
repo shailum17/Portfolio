@@ -1,70 +1,88 @@
+// GSAP animation removed. Using Intersection Observer + CSS for animations now.
+// Intersection Observer for scroll-based animations
+
 document.addEventListener('DOMContentLoaded', () => {
-  // Respect reduced motion
-  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
-  if (prefersReducedMotion) {
-    // Remove all animation durations
-    document.querySelectorAll('*').forEach(el => {
-      el.style.transition = 'none';
-      el.style.animation = 'none';
+  // Elements to animate
+  const animatedEls = [
+    ...document.querySelectorAll('main section'),
+    ...document.querySelectorAll('.portfolio-item'),
+    ...document.querySelectorAll('.skill-category'),
+    ...document.querySelectorAll('h2, h3, .btn, img, .skill-item, .contact-item')
+  ];
+
+  const observer = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      const el = entry.target;
+      if (entry.isIntersecting) {
+        el.classList.add('animate-in');
+        // Animate children with .stagger-animate class
+        const children = el.querySelectorAll('.stagger-animate');
+        children.forEach((child, idx) => {
+          setTimeout(() => child.classList.add('animate-in'), idx * 100);
+        });
+      } else {
+        el.classList.remove('animate-in');
+        // Remove animation from children
+        const children = el.querySelectorAll('.stagger-animate');
+        children.forEach(child => child.classList.remove('animate-in'));
+      }
     });
-    return;
+  }, {
+    threshold: 0.15
+  });
+
+  animatedEls.forEach(el => {
+    el.classList.add('pre-animate'); // initial state
+    // Also set pre-animate for children
+    el.querySelectorAll('.stagger-animate').forEach(child => child.classList.add('pre-animate'));
+    observer.observe(el);
+  });
+
+  // 5. Animate nav links on load
+  gsap.from('.nav-links li', {
+    opacity: 0,
+    y: -20,
+    duration: 0.6,
+    stagger: 0.08,
+    ease: 'power2.out',
+    delay: 0.2
+  });
+
+  // 6. Animate mobile menu open/close
+  const mobileMenu = document.querySelector('.mobile-menu');
+  const navLinks = document.querySelector('.nav-links');
+  if (mobileMenu && navLinks) {
+    mobileMenu.addEventListener('click', () => {
+      if (navLinks.classList.contains('active')) {
+        gsap.fromTo(navLinks, {x: '-100%'}, {x: '0%', duration: 0.4, ease: 'power2.out'});
+      } else {
+        gsap.to(navLinks, {x: '-100%', duration: 0.4, ease: 'power2.in'});
+      }
+    });
   }
 
-  // 1. Hide loader first
-  gsap.to(".page-loader", { 
-    opacity: 0, 
-    duration: 0.5,
-    onComplete: () => {
-      document.querySelector(".page-loader").style.display = "none";
-    }
-  });
-
-  // 2. Register ScrollTrigger
-  gsap.registerPlugin(ScrollTrigger);
-  
-  // 3. Only animate elements when they enter viewport
-  // Skills cards animation (fixed)
-  gsap.to(".skill-item", {
-    opacity: 1,
-    y: 0,
-    duration: 0.6,
-    stagger: 0.1,
-    scrollTrigger: {
-      trigger: "#skills",
-      start: "top 90%", // Trigger earlier
-      end: "bottom 60%",
-      toggleActions: "play none none none", // Only play once
-      onEnter: () => {
-        // Force show skills if not visible
-        document.querySelectorAll('.skill-item').forEach(el => {
-          el.style.opacity = 1;
-        });
+  // 7. Animate modal open/close
+  const modal = document.getElementById('project-modal');
+  if (modal) {
+    const observer = new MutationObserver(() => {
+      if (modal.classList.contains('show')) {
+        gsap.fromTo('.modal-content', {scale: 0.9, opacity: 0}, {scale: 1, opacity: 1, duration: 0.4, ease: 'power2.out'});
       }
-    }
-  });
-
-  // 4. Other animations (safe version)
-  // Section animations
-  gsap.utils.toArray("section").forEach(section => {
-    gsap.fromTo(section, 
-      { opacity: 0, y: 30 },
-      {
-        opacity: 1,
-        y: 0,
-        duration: 1,
-        scrollTrigger: {
-          trigger: section,
-          start: "top 85%",
-          toggleActions: "play none none none"
-        }
-      }
-    );
-  });
-
-  // 5. Fallback to ensure content is always visible
-  setTimeout(() => {
-    document.querySelectorAll('section, .skill-item').forEach(el => {
-      el.style.opacity = 1;
     });
-  }, 3000); // 3-second safety net
+    observer.observe(modal, {attributes: true, attributeFilter: ['class']});
+  }
+
+  // 8. Animate footer
+  gsap.from('footer .footer-content > .footer-column', {
+    opacity: 0,
+    y: 40,
+    duration: 0.7,
+    stagger: 0.15,
+    ease: 'power2.out',
+    scrollTrigger: {
+      trigger: 'footer',
+      start: 'top 90%',
+      toggleActions: 'play none none none'
+    }
+  });
 });
