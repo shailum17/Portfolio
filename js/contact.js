@@ -2,8 +2,8 @@
 const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
-    // Replace with your actual Formspree endpoint!
-    contactForm.setAttribute('action', 'https://formspree.io/f/movwzzey');
+    // Use the same Formspree endpoint as in index.html
+    contactForm.setAttribute('action', 'https://formspree.io/f/xayzblpr');
     contactForm.setAttribute('method', 'POST');
 
     contactForm.addEventListener('submit', async function(e) {
@@ -48,7 +48,13 @@ if (contactForm) {
                     <i class="fas fa-check-circle"></i>
                     <p>Thank you! Your message has been sent successfully.</p>
                 `;
-                this.parentNode.insertBefore(successMsg, this.nextSibling);
+                const successContainer = document.getElementById('form-success-container');
+                if (successContainer) {
+                    successContainer.innerHTML = '';
+                    successContainer.appendChild(successMsg);
+                } else {
+                    this.parentNode.insertBefore(successMsg, this.nextSibling);
+                }
 
                 // Reset form
                 this.reset();

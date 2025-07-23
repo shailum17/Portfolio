@@ -37,11 +37,39 @@ document.addEventListener("DOMContentLoaded", function() {
 
 // Theme toggle
 const themeToggle = document.querySelector('.theme-toggle');
+const themeIcon = themeToggle.querySelector('i');
+
+// Set initial icon based on theme
+function setThemeIcon() {
+    if (document.body.classList.contains('dark-theme')) {
+        themeIcon.classList.add('fa-sun');
+        themeIcon.classList.remove('fa-moon');
+    } else {
+        themeIcon.classList.remove('fa-sun');
+        themeIcon.classList.add('fa-moon');
+    }
+}
+setThemeIcon();
+
 themeToggle.addEventListener('click', () => {
     document.body.classList.toggle('dark-theme');
-    themeToggle.querySelector('i').classList.toggle('fa-sun');
-    themeToggle.querySelector('i').classList.toggle('fa-moon');
+    setThemeIcon();
 });
+
+// Mobile menu toggle
+const mobileMenu = document.querySelector('.mobile-menu');
+const navLinks = document.querySelector('.nav-links');
+if (mobileMenu && navLinks) {
+    mobileMenu.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+    // Close menu on link click (for single page nav)
+    navLinks.querySelectorAll('a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+}
 
 // Tab functionality
 const tabBtns = document.querySelectorAll('.tab-btn');

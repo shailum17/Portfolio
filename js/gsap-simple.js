@@ -1,4 +1,15 @@
 document.addEventListener('DOMContentLoaded', () => {
+  // Respect reduced motion
+  const prefersReducedMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+  if (prefersReducedMotion) {
+    // Remove all animation durations
+    document.querySelectorAll('*').forEach(el => {
+      el.style.transition = 'none';
+      el.style.animation = 'none';
+    });
+    return;
+  }
+
   // 1. Hide loader first
   gsap.to(".page-loader", { 
     opacity: 0, 

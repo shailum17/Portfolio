@@ -55,7 +55,30 @@ const projects = [
 const modal = document.getElementById('project-modal');
 const modalContent = document.querySelector('.modal-body');
 const closeBtn = document.querySelector('.close-modal');
+closeBtn.setAttribute('aria-label', 'Close modal');
 const viewButtons = document.querySelectorAll('.view-details');
+
+// Focus trap for modal accessibility
+function trapFocus(element) {
+    const focusableEls = element.querySelectorAll('a, button, textarea, input, select, [tabindex]:not([tabindex="-1"])');
+    const firstFocusableEl = focusableEls[0];
+    const lastFocusableEl = focusableEls[focusableEls.length - 1];
+    element.addEventListener('keydown', function(e) {
+        if (e.key === 'Tab') {
+            if (e.shiftKey) { // shift + tab
+                if (document.activeElement === firstFocusableEl) {
+                    e.preventDefault();
+                    lastFocusableEl.focus();
+                }
+            } else { // tab
+                if (document.activeElement === lastFocusableEl) {
+                    e.preventDefault();
+                    firstFocusableEl.focus();
+                }
+            }
+        }
+    });
+}
 
 viewButtons.forEach(button => {
     button.addEventListener('click', () => {
@@ -93,6 +116,11 @@ viewButtons.forEach(button => {
             modalContent.innerHTML = html;
             modal.classList.add('show');
             document.body.style.overflow = 'hidden';
+            // Trap focus
+            setTimeout(() => {
+                trapFocus(modal);
+                closeBtn.focus();
+            }, 100);
         }
     });
 });

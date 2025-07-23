@@ -1271,6 +1271,7 @@ textarea.form-control {
         right: auto;
         top: auto;
         transform: none;
+        max-width: 100vw;
     }
     
     .hero-btns {
@@ -1323,4 +1324,14 @@ textarea.form-control {
     .contact-container {
         grid-template-columns: 1fr;
     }
+    
+    .hero-image {
+        max-width: 100vw;
+    }
+}
+
+.nav-links a:focus-visible, .btn:focus-visible, .theme-toggle:focus-visible, .mobile-menu:focus-visible, .close-modal:focus-visible {
+    outline: 2px solid var(--primary);
+    outline-offset: 2px;
+    box-shadow: 0 0 0 2px var(--secondary);
 }
