@@ -3,7 +3,7 @@ const contactForm = document.getElementById('contactForm');
 
 if (contactForm) {
     // Use the same Formspree endpoint as in index.html
-    contactForm.setAttribute('action', 'https://formspree.io/f/xayzblpr');
+    contactForm.setAttribute('action', 'https://formspree.io/f/movwzzey');
     contactForm.setAttribute('method', 'POST');
 
     contactForm.addEventListener('submit', async function(e) {
@@ -70,8 +70,16 @@ if (contactForm) {
                 console.error('Formspree error:', data);
             }
         } catch (error) {
-            alert('There was an error sending your message. Please try again later.');
+            alert('There was an error sending your message. Please check your internet connection or try again later.');
             console.error('Fetch error:', error);
+            // Optionally, show error in the form-success-container
+            const errorContainer = document.getElementById('form-success-container');
+            if (errorContainer) {
+                errorContainer.innerHTML = '<div class="form-success" style="color:#ff6b6b;"><i class="fas fa-times-circle"></i> <p>Failed to send message. Please try again later.</p></div>';
+                setTimeout(() => {
+                    errorContainer.innerHTML = '';
+                }, 5000);
+            }
         } finally {
             submitBtn.disabled = false;
             submitBtn.innerHTML = '<span class="btn-text">Send Message</span><span class="btn-icon"><i class="fas fa-paper-plane"></i></span>';
